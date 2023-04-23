@@ -1,0 +1,477 @@
+/*Стиль базовых html5 блоков*/
+body {
+	font: 12px Tahoma, sans-serif;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100%;
+	/*backdrop-filter: blur(10px);*/
+	margin: 0;
+}
+
+p {
+	margin: 15px 0;
+	padding: 0 5px;
+}
+
+.wrapper {
+	max-width: 1080px;
+	margin: auto;
+}
+
+.upbutton {
+	width: 88px; 
+	height: 150px;
+	position: fixed;
+	bottom: 20px;
+	right: 50px;
+}
+
+header {
+	padding: 20px 0;
+	background: #fffff;
+}
+
+main {
+	background:#f3f3f3;
+	margin-top: 10px;
+}
+
+aside {
+	float: left;
+	width: 250px;
+	background: #f3f3f3;
+}
+
+/* стиль основного текста (контента) */
+
+section {
+	margin-left: 280px;
+	padding-bottom: 50px;
+}
+
+section > h2 {
+	color: #000000;
+}
+
+section > p {
+	color: #202020;
+}
+
+footer {
+	color: #000000;
+	font-size: 11px;
+	background: #1a153f;
+}
+
+.footer {
+	max-width: 960px;
+	margin: auto;
+	padding: 0px 50px 0px;
+	height: 90px;
+}
+
+/*Стиль полей ввода*/
+.input {
+	float: right;
+}
+
+/*Стиль навигационных ссылок меню*/
+nav a {
+	text-decoration: none;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	list-style-position: inside;
+	font: 14px 'Oswald', sans-serif;
+	padding: 10px;
+}
+
+h1 {
+	color: #ffffff;
+	font: 40px/40px 'Oswald', sans-serif;
+	margin: auto;
+	padding: 0 70px;
+	text-align:center;
+}
+
+h3 {
+	color: #111111;
+}
+
+/*заголовка страницы*/
+.heading {
+	padding-left: 20px;
+	padding: 50px 0;
+}
+
+/*Стиль меню сверху(основная навигация)*/
+.top-menu {
+	text-align: right;
+}
+.top-menu li {
+	display: inline-block;
+	padding: 10px 30px;
+	margin: 10;
+	background:rgba(0,0,0,0.1);
+}
+
+.top-menu li.active {
+	background: #e0007b;
+	color: #fff;
+}
+
+.top-menu a {
+	color: #ffffff;
+}
+
+/*Стиль подменю*/
+.aside-menu li {
+	font-weight: 500;
+	list-style-type: square;
+	border-top: 1px solid #e7e7e7;
+}
+
+.aside-menu li:first-child {
+	border: none;
+}
+
+.aside-menu li.active {
+	color: #e0007b;
+}
+
+.aside-menu a {
+	color: #e0007b;
+}
+
+aside > h2 {
+	background: #e0007b;
+	font: 14px 'Oswald', sans-serif;
+	color: #fff;
+	padding: 10px;
+	margin: 0px 0 0 0;
+}
+
+h4 {
+
+	font: 14px 'Oswald', sans-serif;
+	color: #000000;
+	padding: 10px;
+	margin: 0px 0 0 0;
+	margin-left: 10px;
+}
+
+h5 {
+
+	font: 18px 'Oswald', sans-serif;
+	color: #000000;
+	margin: 0px 0 0 0;
+	text-align: center;
+	font-weight: bold;
+	padding: 20px;
+}
+
+aside > h3 {
+	background: #e0007b;
+	font: 14px 'Oswald', sans-serif;
+	color: #fff;
+	padding: 10px;
+	margin: 40px 0 0 0;
+}
+
+aside > p {
+	background: #e0007b;
+	border: 1px solid #e0007b;
+	padding: 10px;
+	margin: 0;
+}
+
+table {
+   width: 100%;
+}
+th {
+  font-weight: normal;
+  color: #039;
+  padding: 10px 15px;
+}
+td {
+  color: #669;
+  border-top: 1px solid #e8edff;
+
+}
+tr:nth-child(2n) {
+  background: #e8edff;
+}
+
+.td_button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color:  #669;
+    font: 16px 'Oswald', sans-serif;
+}
+
+.td_button2 {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color:  transparent;
+    font: 5px 'Oswald', sans-serif;
+}
+
+figure {
+	display: inline-block;
+	margin: 5px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	border: thick double #32a1ce;
+	margin-left: 80px;
+	margin-top: 20px;
+}
+
+#footer-logo {
+	float: right;
+	margin-top: 20px;
+	font-size: 10px;
+	text-align: right;
+}
+
+#social {
+	float: left;
+	margin-left: 20px;
+	width: 130px;
+}
+
+.social-icon {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.google {
+	background: url(../images/exel.png);
+	background-position: -30px 0;
+}
+
+.dropbtn {
+  background-color: #e0007b;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  margin: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 10px;
+  left: 150px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #1a153f;}
+
+
+.custom-btn {
+  width: 230px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  margin-left: 10px;
+  margin-top: 50px;
+}
+.btn-8 {
+  background-color: #f0ecfc;
+background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-8 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-8:before,
+.btn-8:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #c797eb;
+  transition: all 0.3s ease;
+}
+.btn-8:before{
+   height: 0%;
+   width: 2px;
+}
+.btn-8:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-8:hover:before {
+  height: 100%;
+}
+.btn-8:hover:after {
+  width: 100%;
+}
+.btn-8:hover{
+  background: transparent;
+}
+.btn-8 span:hover{
+  color: #c797eb;
+}
+.btn-8 span:before,
+.btn-8 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #c797eb;
+  transition: all 0.3s ease;
+}
+.btn-8 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-8 span:after {
+  height: 2px;
+  width: 0%;
+}
+.btn-8 span:hover:before {
+  height: 100%;
+}
+.btn-8 span:hover:after {
+  width: 100%;
+}
+
+
+.custom-btn2 {
+  width: 230px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  margin-left: 10px;
+}
+.btn-8 {
+  background-color: #f0ecfc;
+background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-8 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-8:before,
+.btn-8:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #c797eb;
+  transition: all 0.3s ease;
+}
+.btn-8:before{
+   height: 0%;
+   width: 2px;
+}
+.btn-8:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-8:hover:before {
+  height: 100%;
+}
+.btn-8:hover:after {
+  width: 100%;
+}
+.btn-8:hover{
+  background: transparent;
+}
+.btn-8 span:hover{
+  color: #c797eb;
+}
+.btn-8 span:before,
+.btn-8 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #c797eb;
+  transition: all 0.3s ease;
+}
+.btn-8 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-8 span:after {
+  height: 2px;
+  width: 0%;
+}
+.btn-8 span:hover:before {
+  height: 100%;
+}
+.btn-8 span:hover:after {
+  width: 100%;
+}

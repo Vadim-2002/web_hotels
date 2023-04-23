@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="/static/stylesheets/styles_reg.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<a href="index.html"><img src="/static/images/logotip2.png" alt="Whitesquare logo"></a>
+				<div class="heading">
+						<h1>Гостиницы России</h1>
+				</div>
+			</header>
+			<nav>
+				<ul class="top-menu">
+					<li><a href="/index">Главная</a></li>
+					<li class="active"><a href="/regist">{{name_user_lk}}</a></li>
+					<li><a href="/about">О проекте</a></li>
+					<li><a href="/contact">Контакты</a></li>
+				</ul>
+			</nav>
+			<main>
+				<article>
+					<section>
+						<div class="main">  	
+							<input type="checkbox" id="chk" aria-hidden="true">
+
+								<div class="signup">
+									<form method="post" action="/regist">
+										<label for="chk" aria-hidden="true">Регистрация</label>
+										<input type="text" name="name_user" placeholder="Ваше Имя" required="">
+										<input type="email" name="email" placeholder="Email" required="">
+										<input type="password" name="pswd" placeholder="Пароль" required="">
+										<form method="post" action="/regist">
+											<button name="new_user" value="True">Далее</button>
+										</form>
+									</form>
+								</div>
+
+								<div class="login">
+									<form method="post" action="/regist">
+										<label for="chk" aria-hidden="true">Вход</label>
+										<input type="email" name="email" placeholder="Email" required="">
+										<input type="password" name="pswd" placeholder="Пароль" required="">
+										<form method="post" action="/regist">
+											<button name="input_user" value="True">Далее</button>
+										</form>
+									</form>
+								</div>
+						</div>
+					</section>
+				</article>
+			</main>
+			</div>
+	</body>
+</html>

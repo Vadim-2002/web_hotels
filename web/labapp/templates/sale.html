@@ -1,0 +1,210 @@
+{% block content %}
+
+	<head>
+		<meta charset="utf-8">
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="/static/stylesheets/styles.css">
+		<script>
+			window.onload = function() {
+			  document.getElementById('upbutton').style.display = 'none';
+			};
+		    window.onscroll = function() 
+			{
+			  var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+			  if (scrolled > 300) 
+				document.getElementById('upbutton').style.display = 'block';
+			  else 
+				document.getElementById('upbutton').style.display = 'none';
+			}
+			
+			var smoothJumpUp = function() 
+			{
+				if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) 
+				{
+					window.scrollBy(0,-30);
+					setTimeout(smoothJumpUp, 20);
+				}
+			}
+		</script>
+	</head>
+		<body>
+			<div class="wrapper">
+			<a class="upbutton" id="upbutton" href="#" onclick="smoothJumpUp(); return false;">
+				<img src="/static/images/up.png" alt="Top" border="none" title="Наверх">
+			</a>
+				<header>
+					<a href="index.html"><img src="/static/images/logotip2.png" alt="Whitesquare logo"></a>
+					<div class="heading">
+						<h1>Гостиницы России</h1>
+					</div>
+				</header>
+				<nav>
+					<ul class="top-menu">
+						<li><a href="/index">Главная</a></li>
+						<li><a href="/regist">{{name_user_lk}}</a></li>
+						<li><a href="/about">О проекте</a></li>
+						<li><a href="/contact">Контакты</a></li>
+					</ul>
+				</nav>
+					<main>
+					<aside>
+					  <h2>Категории</h2>
+					  <nav>
+						  <form method="post" action="/sale">
+							 <p><input type="checkbox" name="cb_cat_1" value="Bedroom"> Bedroom</p>
+							 <p><input type="checkbox" name="cb_cat_2" value="Locality"> Locality</p>
+							 <p><input type="checkbox" name="cb_cat_3" value="Property_type"> Property type</p>
+							 <p><input type="checkbox" name="cb_cat_4" value="Area"> Area</p>
+							 <p><input type="checkbox" name="cb_cat_5" value="City"> City</p>
+							 <p><input type="submit" class="custom-btn2 btn-8" name="but_cat" value="Выбрать"></p>
+						  </form>
+					  </nav>
+
+						<nav>
+						 <div class="dropdown">
+							 <form method="post" action="/sale">
+								<button class="dropbtn">Сортировать по</button>
+								<div class="dropdown-content">
+										<p><input type="radio" name="sort" value="null">----------</p>
+										<p><input type="radio" name="sort" value="price_increase">возрастанию цены</p>
+										<p><input type="radio" name="sort" value="price_decrease">убыванию цены</p>
+								</div>
+							 </form>
+						 </div>
+						</nav>
+						
+      <nav>
+         <div class="dropdown">
+             <form method="post" action="/sale">
+            <button class="dropbtn">Категория цены</button>
+            <div class="dropdown-content">
+                <p><input type="radio" name="price_category" value="null">----------</p>
+                <p><input type="radio" name="price_category" value="min_price">низкая цена</p>
+                <p><input type="radio" name="price_category" value="average_price">средняя цена</p>
+                <p><input type="radio" name="price_category" value="max_price">высокая цена</p>
+            </div>
+             </form>
+         </div>
+      </nav>
+      <h4>Страница:  {{num_page}}</h4>
+      <nav>
+          <form method="post" action="/sale">
+              <p><input type="submit" class="custom-btn btn-8" name="page_last" value="Предыдущая страница"></p>
+          </form>
+    </nav>
+
+      <nav>
+          <form method="post" action="/sale">
+              <p><input type="submit" class="custom-btn btn-8" name="page_next" value="Следующая страница"></p>
+          </form>
+    </nav>
+					</aside>
+							<form method="post" action="/pay">
+		<article>
+			<section>
+				<table>
+				 <tr>
+					<th>{{name_of_columns[0]}}</th>
+					<th>{{name_of_columns[1]}}</th>
+					 <th>{{name_of_columns[2]}}</th>
+					 <th>{{name_of_columns[3]}}</th>
+					 <th>{{name_of_columns[4]}}</th>
+					 <th>{{name_of_columns[5]}}</th>
+					<th>{{name_of_columns[6]}}</th>
+				 </tr>
+            <tbody>
+				{% for row in processed_files %}
+					<tr>
+						<td>
+							<form method="post" action="/pay">
+								<p><input type="submit" class="td_button" name="col_1" value="{{row[0]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_2" value="{{row[1]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_3" value="{{row[2]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_4" value="{{row[3]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_5" value="{{row[4]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_6" value="{{row[5]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_7" value="{{row[6]}}"></p>
+							</form>
+						</td>
+						<td>
+							<form method="post" action="/pay">
+								<p><input type="submit" class="td_button" name="col_2" value="{{row[1]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_1" value="{{row[0]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_3" value="{{row[2]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_4" value="{{row[3]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_5" value="{{row[4]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_6" value="{{row[5]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_7" value="{{row[6]}}"></p>
+							</form>
+						</td>
+						<td>
+							<form method="post" action="/pay">
+								<p><input type="submit" class="td_button" name="col_3" value="{{row[2]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_1" value="{{row[0]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_2" value="{{row[1]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_4" value="{{row[3]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_5" value="{{row[4]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_6" value="{{row[5]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_7" value="{{row[6]}}"></p>
+							</form>
+						</td>
+						<td>
+							<form method="post" action="/pay">
+								<p><input type="submit" class="td_button" name="col_4" value="{{row[3]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_1" value="{{row[0]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_3" value="{{row[2]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_2" value="{{row[1]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_5" value="{{row[4]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_6" value="{{row[5]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_7" value="{{row[6]}}"></p>
+							</form>
+						</td>
+						<td>
+							<form method="post" action="/pay">
+								<p><input type="submit" class="td_button" name="col_5" value="{{row[4]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_1" value="{{row[0]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_3" value="{{row[2]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_4" value="{{row[3]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_2" value="{{row[1]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_6" value="{{row[5]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_7" value="{{row[6]}}"></p>
+							</form>
+						</td>
+						<td>
+							<form method="post" action="/pay">
+								<p><input type="submit" class="td_button" name="col_6" value="{{row[5]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_1" value="{{row[0]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_3" value="{{row[2]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_4" value="{{row[3]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_5" value="{{row[4]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_2" value="{{row[1]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_7" value="{{row[6]}}"></p>
+							</form>
+						</td>
+						<td>
+							<form method="post" action="/pay">
+								<p><input type="submit" class="td_button" name="col_7" value="{{row[6]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_1" value="{{row[0]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_3" value="{{row[2]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_4" value="{{row[3]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_5" value="{{row[4]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_6" value="{{row[5]}}"></p>
+								<p><input type="hidden" class="td_button" name="col_2" value="{{row[1]}}"></p>
+							</form>
+						</td>
+					</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+		</section>
+	</article>
+		</form>
+				</main>
+			</div>
+			<footer>
+				<div class="footer">
+				</div>
+			</footer>
+		</body>
+
+{% endblock %}

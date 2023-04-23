@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="rus" >
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous"><link rel="stylesheet" href="/static/stylesheets/style_pay.css">
+
+</head>
+<body>
+<div class="wrapper1">
+	<header>
+		<a href="index.html"><img src="/static/images/logotip2.png" alt="Whitesquare logo"></a>
+		<div class="heading">
+			<h2>Гостиницы России</h2>
+		</div>
+	</header>
+	<nav>
+		<ul class="top-menu">
+			<li><a href="/index">Главная</a></li>
+			<li><a href="/regist">{{name_user_lk}}</a></li>
+			<li><a href="/about">О проекте</a></li>
+			<li><a href="/contact">Контакты</a></li>
+		</ul>
+	</nav>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+    <div class="container">
+        <form method="post" action="">
+            <h1>
+                <i class="fas fa-shipping-fast"></i>
+                Оформление аренды
+            </h1>
+            <div class="name">
+                <div>
+                    <label for="f-name">Имя</label>
+                    <input type="text" name="f-name" value="{{name_user_lk}}">
+                </div>
+                <div>
+                    <label for="l-name">Фамилия</label>
+                    <input type="text" name="l-name">
+                </div>
+            </div>
+            <div class="street">
+                <label for="name">Гостиница</label>
+                <input type="text" name="hotel" value="{{col_name_pay[0]}}" readonly>
+            </div>
+			<div class="street">
+                <label for="name">Регион</label>
+                <input type="text" name="address" value="{{col_name_pay[1]}}" readonly>
+            </div>
+			<div class="street">
+                <label for="name">Город</label>
+                <input type="text" name="address" value="{{col_name_pay[2]}}" readonly>
+            </div>
+			<div class="street">
+                <label for="name">Тип номера</label>
+                <input type="text" name="address" value="{{col_name_pay[3]}}" readonly>
+            </div>
+			<div class="street">
+                <label for="name">Цена</label>
+                <input type="text" name="address" value="{{col_name_pay[4]}}" readonly>
+            </div>
+            <h1>
+                <i class="far fa-credit-card"></i> Платежная информация
+            </h1>
+            <div class="cc-num">
+                <label for="card-num">Номер карты</label>
+                <input type="text" name="card-num">
+            </div>
+            <div class="cc-info">
+                <div>
+                    <label for="card-num">Срок действия</label>
+                    <input type="text" name="expire">
+                </div>
+                <div>
+                    <label for="card-num">CCV</label>
+                    <input type="text" name="security">
+                </div>
+            </div>
+                <div class="btns">
+                    <form method="post" action="">
+                        <button name="btn_ofrm" value="True">Оформить</button>
+                        <button name="back" value="True">Вернуться</button>
+                    </form>
+                </div>
+        </form>
+    </div>
+</div>
+<!-- partial -->
+  
+</body>
+</html>

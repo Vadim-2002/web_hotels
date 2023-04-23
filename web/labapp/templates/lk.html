@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="/static/stylesheets/styles_reg.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<a href="index.html"><img src="/static/images/logotip2.png" alt="Whitesquare logo"></a>
+				<div class="heading">
+						<h1>Гостиницы России</h1>
+				</div>
+			</header>
+			<nav>
+				<ul class="top-menu">
+					<li><a href="/index">Главная</a></li>
+					<li class="active"><a href="/regist">{{name_user_lk}}</a></li>
+					<li><a href="/about">О проекте</a></li>
+					<li><a href="/contact">Контакты</a></li>
+				</ul>
+			</nav>
+			<main>
+				<article>
+					<section>
+						<div class="main">  	
+							<input type="checkbox" id="chk" aria-hidden="true">
+
+								<div class="signup">
+									<form method="post" action="/regist">
+										<label for="chk" aria-hidden="true">Личный кабинет</label>
+										<input type="text" name="txt" value="{{name_user_lk}}" readonly>
+										<input type="email" name="email" value="{{email_user_lk}}" readonly>
+										<form method="post" action="/regist">
+											<button name="exit" value="True">Выйти</button>
+										</form>
+										<form method="post" action="/regist">
+											<button name="delete" value="True" style="height: 30px; width: 80px; margin-top: 100px;">Удалить аккаунт</button>
+										</form>
+									</form>
+								</div>
+						</div>
+					</section>
+				</article>
+			</main>
+			</div>
+	</body>
+</html>

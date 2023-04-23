@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="rus" >
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous"><link rel="stylesheet" href="/static/stylesheets/styles_room.css">
+
+</head>
+<body>
+<div class="wrapper1">
+	<header>
+		<a href="index.html"><img src="/static/images/logotip2.png" alt="Whitesquare logo"></a>
+		<div class="heading">
+			<h2>Гостиницы России</h2>
+		</div>
+	</header>
+	<nav>
+		<ul class="top-menu">
+			<li><a href="/index">Главная</a></li>
+			<li><a href="/regist">{{name_user_lk}}</a></li>
+			<li><a href="/about">О проекте</a></li>
+			<li><a href="/contact">Контакты</a></li>
+		</ul>
+	</nav>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+    <div class="container">
+        <form method="post" action="/pay">
+            <h1>
+				{{name_hotel}}
+            </h1>
+            <div class="street">
+                <label for="name">Стандартный номер</label>
+                <input type="text" name="address" value="Цена: {{price_stand}} рублей в сутки" readonly>
+				<input type="text" name="address" value="Колличество свободных номеров: {{count_stand}}" readonly>
+				<div class="btns">
+					<form method="post" action="/pay">
+						<button name="btn_ofrm_stand" value="True">Оформить</button>
+					</form>
+				</div>
+                <label for="name">Номера "Люкс"</label>
+                <input type="text" name="address" value="Цена: {{price_luks}} рублей в сутки" readonly>
+				<input type="text" name="address" value="Колличество свободных номеров: {{count_luks}}" readonly>
+				<div class="btns">
+					<form method="post" action="/pay">
+						<button name="btn_ofrm_luks" value="True" style="margin-left: 245px;">Оформить</button>
+					</form>
+				</div>
+                <label for="name">Президентские номера</label>
+                <input type="text" name="address" value="Цена: {{price_vip}} рублей в сутки" readonly>
+				<input type="text" name="address" value="Колличество свободных номеров: {{count_vip}}" readonly>
+				<div class="btns">
+					<form method="post" action="/pay">
+						<button name="btn_ofrm_vip" value="True" style="margin-left: 245px;">Оформить</button>
+					</form>
+				</div>
+			</div>
+			<div class="btns">
+				    <form method="post" action="">
+                        <button name="back" value="True" style="margin-left: 245px;">Вернуться</button>
+                    </form>
+			</div>
+        </form>
+    </div>
+</div>
+<!-- partial -->
+  
+</body>
+</html>
